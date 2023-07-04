@@ -1,0 +1,165 @@
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  width: 500px; 
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 80px; 
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 24px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.password-container {
+  position: relative;
+}
+
+.password-container input[type="password"] {
+  width: 100%;
+  padding-right: 50px;
+}
+
+.password-container button {
+  position: absolute;
+  top: 35%;
+  right: 5px;
+  transform: translateY(-50%);
+  height: 40%;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.password-container button:focus {
+  outline: none;
+}
+
+.password-container button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0e7f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #3a4557;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #3a4557;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: #4285f4;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input[type="password"] {
+  width: 100%;
+  padding-right: 50px;
+}
+
+.password-container button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  height: 50%;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.password-container button:focus {
+  outline: none;
+}
+
+.password-container button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}

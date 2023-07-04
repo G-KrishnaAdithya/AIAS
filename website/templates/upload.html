@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='user.css') }}">
+{% endblock %}
+{% block title %}
+The admin page
+{% endblock %}
+{% block context %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="upload-form">
+          <h4>Upload CSV File</h4>
+          <form method="POST" action="{{ url_for('auth.upload') }}" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="subject">Subject:</label>
+              <select class="form-control" id="subject" name="subject" >
+                <option value="select">select</option>
+                <option value="java">java</option>
+                <option value="python">python</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="csv_file">CSV File:</label>
+              <input type="file" class="form-control-file" id="csv_file" name="csv_file">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+          </form>
+          {% if uploaded_count or skipped_count %}
+          <div class="upload-results">
+            <p>{{ uploaded_count }} records uploaded successfully.</p>
+            <p>{{ skipped_count }} records skipped (already exist).</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

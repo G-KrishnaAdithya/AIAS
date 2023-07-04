@@ -1,0 +1,79 @@
+/* 
+
+.container {
+
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.box-icon {
+  top: 10px;
+  left: 10px;
+  width: 75px;
+  height: 75px;
+}
+.subject-box {
+  border-radius: 10px;
+  text-align: center;
+  margin: 30px;
+}
+.subject-box1 {
+  border-radius: 10px;
+  text-align: center;
+  margin: 30px;
+}
+ */
+/* Container Styles */
+/* Container Styles */
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.box-icon {
+  top: 10px;
+  left: 10px;
+  width: 300px; /* Increase the width */
+  height: 300px; /* Increase the height */
+}
+
+.subject-box {
+  border-radius: 10px;
+  text-align: center;
+  margin: 30px;
+  background-color: #e0e0e0;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.subject-box1 {
+  border-radius: 10px;
+  text-align: center;
+  margin: 30px;
+  background-color: #e0e0e0;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+a.button:hover {
+  background-color: #0056b3;
+}

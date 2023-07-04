@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block title %}Result page{% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+<style>
+  .details-table {
+    display: none;
+  }
+</style>
+<script>
+  function toggleDetails(index) {
+    var detailsTable = document.getElementById("details-table-" + index);
+    var button = document.getElementById("toggle-button-" + index);
+    if (detailsTable.style.display === "none") {
+      detailsTable.style.display = "table";
+      button.innerHTML = "Hide Details";
+    } else {
+      detailsTable.style.display = "none";
+      button.innerHTML = "Show Details";
+    }
+  }
+</script>
+{% endblock %}
+{% block context %}
+  <div class="result-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Easy</th>
+          <th>Medium</th>
+          <th>Hard</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in test_results %}
+          <tr>
+            <td>{{ result.subject }}</td>
+            <td>{{ result.correct_easy_questions }}/{{ result.total_easy_questions }}</td>
+            <td>{{ result.correct_medium_questions }}/{{ result.total_medium_questions }}</td>
+            <td>{{ result.correct_hard_questions }}/{{ result.total_hard_questions }}</td>
+            <td>{{ result.date }}</td>
+            <td>{{ result.time }}</td>
+            <td>
+              <button id="toggle-button-{{ loop.index0 }}" onclick="toggleDetails({{ loop.index0 }})">Show Details</button>
+            </td>
+          </tr>
+          <tr class="details-table" id="details-table-{{ loop.index0 }}">
+            <td colspan="6">
+              <table>
+                <caption>Easy Topics</caption>
+                <thead>
+                  <tr>
+                    <th>Topic</th>
+                    <th>Correct Answers</th>
+                    <th>Number of Questions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for topic in result.easy_topics %}
+                    <tr>
+                      <td>{{ topic.topic }}</td>
+                      <td>{{ topic.correct_answers }}</td>
+                      <td>{{ topic.number_of_questions }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </td>
+            <td>
+              <table>
+                <caption>Medium Topics</caption>
+                <thead>
+                  <tr>
+                    <th>Topic</th>
+                    <th>Correct Answers</th>
+                    <th>Number of Questions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for topic in result.medium_topics %}
+                    <tr>
+                      <td>{{ topic.topic }}</td>
+                      <td>{{ topic.correct_answers }}</td>
+                      <td>{{ topic.number_of_questions }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </td>
+            <td>
+              <table>
+                <caption>Hard Topics</caption>
+                <thead>
+                  <tr>
+                    <th>Topic</th>
+                    <th>Correct Answers</th>
+                    <th>Number of Questions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for topic in result.hard_topics %}
+                    <tr>
+                      <td>{{ topic.topic }}</td>
+                      <td>{{ topic.correct_answers }}</td>
+                      <td>{{ topic.number_of_questions }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='user.css') }}">
+{% endblock %}
+
+{% block title %}User Dashboard{% endblock %}
+
+
+{% block context %}
+{% if user.role == 'student' %}
+<div class="container">
+    <div class="subject-box">
+      <img class="box-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="Java Icon">
+       <h1>Java</h1>
+        <a class="button" href="/java">Attempt</a>
+    </div>
+    <div class="subject-box1">
+      <img class="box-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Java Icon">
+       <h1>Python</h1>
+        <a class="button" href="/python">Attempt</a>
+    </div>
+</div>
+
+{% else %}  
+<h2>You Can Upload Questions Here</h2>
+<a class="button" href="/uploadpage">Upload</a>
+{% endif %}
+{% endblock %}

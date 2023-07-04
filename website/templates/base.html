@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='header.css')}}">
+{% block head %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>AIAS</h2>
+            {% if session.token %}
+            <a class="nav-button1" href="/">HOME</a>
+            <a class="nav-button2" href="/profile">PROFILE</a>
+            <a class="nav-button4" href="/result">RESULT</a>
+            <a class="nav-button3" href="/logout">LOGOUT</a>
+            {% endif %}
+        </nav>     
+    </header>
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="alert">
+                    <p>{{msg}}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block context %}{% endblock %}
+</body>
+<script>
+const alerts = document.querySelectorAll('.alert');
+
+alerts.forEach(function(alert) {
+    setTimeout(function() {
+        alert.style.display = 'none';
+    }, 3000);
+});
+</script>
+</html>

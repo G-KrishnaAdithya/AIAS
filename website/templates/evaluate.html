@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Evaluation {% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='evaluate.css') }}">
+{% endblock %}
+
+{% block context %}
+<div class="result-container">
+  <h1>Quiz Result</h1>
+  <p class="result-info">Total Questions: {{total_questions}}</p>
+  <p class="result-info">Correct Answers: {{correct}}</p>
+  <div class="result-section">
+    <div class="result-category result-easy">
+      <h2>Easy Questions</h2>
+      <p class="result-subinfo">Correct: {{correct_easy_questions}}</p>
+      <p class="result-subinfo">Wrong: {{total_easy_questions - correct_easy_questions}}</p>
+    </div>
+    <div class="result-category result-medium">
+      <h2>Medium Questions</h2>
+      <p class="result-subinfo">Correct: {{correct_medium_questions}}</p>
+      <p class="result-subinfo">Wrong: {{total_medium_questions - correct_medium_questions}}</p>
+    </div>
+    <div class="result-category result-hard">
+      <h2>Hard Questions</h2>
+      <p class="result-subinfo">Correct: {{correct_hard_questions}}</p>
+      <p class="result-subinfo">Wrong: {{total_hard_questions - correct_hard_questions}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='java.css') }}">
+{% endblock %}
+
+{% block title %}Python Test{% endblock %}
+
+{% block context %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <h1>Python Test</h1>
+      <form method="post" action="/evaluate">
+        {% set last_index = questions|length %}
+        {% for question in questions %}
+        <div class="question-box" >
+          <div>
+          <p>{{ loop.index }}Q. {{ question['Question'] }}</p>
+          <input type="hidden" name="question" value="{{ question['Question'] }}">
+          <input type="hidden" name="subject" value="Python">
+          <br/><br/>
+          <textarea id="answer{{ loop.index }}" name="answer" class="answer-textarea" rows="4" cols="50"></textarea>
+          </div>
+          <div class = "Buttons_for_voice">
+          <button type="button" class="btn btn-primary start-button" onclick="startSpeechRecognition({{ loop.index }})">Start Answering 🎤</button>
+          <button type="button" class="btn btn-secondary start-button" onclick="stopSpeechRecognition()">Stop Answering 🎤</button>
+          <!--<button type="button" class="btn btn-secondary reset-button" onclick="resetAnswer({{ loop.index }})">Reset</button>-->
+          </div>
+        </div>
+        {% endfor %}
+
+        <div class="navigation-buttons">
+          <button type="button" class="button-73" onclick="previousQuestion()">Previous</button>
+          <br/><br/>
+          <button type="button" class="button-73" onclick="nextQuestion()">Next</button>
+
+          <br/><br/>
+          <button id="submit-button" type="submit" class="btn btn-primary button-90">Submit</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+
+var recognition;
+
+function startSpeechRecognition(questionIndex) {
+  var answerTextarea = document.getElementById('answer' + questionIndex);
+  answerTextarea.value = '';
+  answerTextarea.classList.remove('error'); // Remove error class
+
+  if (!recognition || recognition.status === 'inactive') {
+    recognition = new webkitSpeechRecognition();
+    recognition.continuous = true;
+
+    recognition.onresult = function(event) {
+      var transcript = event.results[event.results.length - 1][0].transcript;
+      answerTextarea.value += transcript;
+    };
+
+    recognition.start();
+  }
+}
+
+function stopSpeechRecognition() {
+  if (recognition) {
+    recognition.stop();
+    recognition = null;
+  }
+}
+
+function resetAnswer(questionIndex) {
+  var answerTextarea = document.getElementById('answer' + questionIndex);
+  answerTextarea.value = '';
+  answerTextarea.classList.remove('error'); // Remove error class
+}
+
+
+function validateForm() {
+  var answerTextareas = document.getElementsByClassName('answer-textarea');
+  var errorCount = 0;
+
+  for (var i = 0; i < answerTextareas.length; i++) {
+    var answerTextarea = answerTextareas[i];
+    if (answerTextarea.value.trim() === '') {
+      answerTextarea.classList.add('error'); // Add error class
+      errorCount++;
+    }
+  }
+
+  if (errorCount > 0) {
+    alert('Please answer all questions before submitting.');
+    return false;
+  }
+
+  return true;
+}
+
+var currentQuestion = 0;
+var numQuestions = 10;
+
+function showQuestion(questionIndex) {
+  var questions = document.getElementsByClassName('question-box');
+  for (var i = 0; i < questions.length; i++) {
+    questions[i].style.display = 'none';
+  }
+
+  questions[questionIndex].style.display = 'block';
+  var submitButton = document.getElementById('submit-button');
+  if (questionIndex === numQuestions - 1) {
+    submitButton.style.display = 'inline-block';
+  } else {
+    submitButton.style.display = 'none';
+  }
+}
+
+
+
+
+function nextQuestion() {
+  if (currentQuestion < numQuestions - 1) {
+    currentQuestion++;
+    showQuestion(currentQuestion);
+  }
+}
+
+function previousQuestion() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    showQuestion(currentQuestion);
+  }
+}
+
+// Show the first question initially
+showQuestion(currentQuestion);
+
+  </script>
+  
+{% endblock %}

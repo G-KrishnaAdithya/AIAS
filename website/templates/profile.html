@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='user.css') }}">
+<style>
+  /* Additional styles specific to this page */
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .profile-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .profile-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .profile-value {
+    font-size: 18px;
+    color: #777;
+  }
+</style>
+{% endblock %}
+{% block title %}Profile{% endblock %}
+{% block context %}
+<div class="detail-container">
+  <div class="detail-card">
+    <img class="avatar" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="Avatar">
+    <div class="detail-card-content">
+      <div class="profile-details">
+        <div class="profile-row">
+          <span class="profile-label">Name:</span>
+          <span class="profile-value">{{ user.first_name }}</span>
+        </div>
+    <!-- <div class="profile-row">
+          <span class="profile-label">Name :</span>
+          <span class="profile-value">{{ user.first_name }}</span>
+        </div>
+          <div class="profile-row">
+          <span class="profile-label">Role:</span>
+          <span class="profile-value">{{ user.role }}</span>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</div>
+{% endblock %}
+

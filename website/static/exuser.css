@@ -1,0 +1,135 @@
+
+/* Container Styles */
+.container {
+    max-width: 100px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Box Styles */
+  .box-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 75px;
+    height: 75px;
+  }
+  
+  .subject-box {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 70%;
+    height: 40%;
+    box-shadow: 0 0 15px #2d3748;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .subject-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .subject-box1 {
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    width: 70%;
+    height: 40%;
+    background-color: #fffefe;
+    box-shadow: 0 0 15px #2d3748;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .subject-box1:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  .test-results-box {
+    text-align: center;
+  }
+  
+  /* Button Styles */
+  .button {
+    display: block;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 15px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+    right: 7%;
+    top: 70%;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #048334;
+  }
+  
+  .button1 {
+    display: inline-block;
+    text-align: center;
+    padding: 30px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: large;
+  }
+  
+  /* User Info Styles */
+  .user-info-box h4 {
+    margin: 0;
+  }
+  
+  /* Responsive Styles */
+  /* @media (max-width: 767px) {
+    .subject-box {
+      width: 100%; /* Display one box per row on smaller screens */
+  
+  /* Profile */
+  .detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .detail-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+  }
+  
+  .detail-card-content {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .detail-card h2 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .detail-card p {
+    color: #777;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  

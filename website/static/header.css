@@ -1,0 +1,163 @@
+/* 
+header {
+    background-color: #333;
+    color: #fff;
+    height:20%;
+    width:100%;
+  }
+
+  nav {
+    display: flex; 
+    align-items: center;
+  }
+
+  .alert {
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #d4edda;
+    color: #155724;
+    width: 30%;
+    position:absolute;
+    left:35%;
+  }
+  
+  .alert p {
+    margin: 0;
+  }
+  
+  
+
+  .nav-button1 {
+    position: absolute;
+    left:17%;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: small;
+  }
+  .nav-button2 {
+    position: absolute;
+    left:22%;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: small;
+  }
+  .nav-button3 {
+    position: absolute;
+    right: 5%;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: medium;
+  }
+  .nav-button4 {
+    position: absolute;
+    left:27%;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: small;
+  } */
+
+
+  header {
+    background-color: #002D62;
+    color: #fffffff2;
+    height: 20%;
+    width: 100%;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert {
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #d4edda;
+    color: #155724;
+    width: 30%;
+    position: absolute;
+    left: 35%;
+  }
+  
+  .alert p {
+    margin: 0;
+  }
+  
+  .nav-button1 {
+    position: absolute;
+    left: 17%;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: small;
+  }
+  
+  .nav-button2 {
+    position: absolute;
+    left: 22%;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: small;
+  }
+  
+  .nav-button3 {
+    position: absolute;
+    right: 5%;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: medium;
+  }
+  
+  .nav-button4 {
+    position: absolute;
+    left: 27%;
+    display: inline-block;
+    padding: 1px 2px;
+    margin: 0 5px;
+    color: #fff;
+    border-radius: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: small;
+  }
+  
