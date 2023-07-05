@@ -11,11 +11,7 @@ from . import mongo2
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import current_app
 import openai
-import gradio
-import re
-import openai
-import gradio
-import re
+
 
 auth = Blueprint('auth', __name__)
 
