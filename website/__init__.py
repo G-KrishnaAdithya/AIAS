@@ -19,7 +19,7 @@ def create_app():
 
     app.register_blueprint(auth,url_prefix='/')
 
-    from flask.json import JSONEncoder
+    from json import JSONEncoder
     from bson.objectid import ObjectId
 
     class CustomJSONEncoder(JSONEncoder):
