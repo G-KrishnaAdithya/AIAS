@@ -8,4 +8,5 @@ openai
 re
 pyjwt
 gunicorn
+--upgrade pip
 
