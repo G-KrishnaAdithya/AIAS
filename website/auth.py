@@ -10,6 +10,9 @@ from .models import TestResultData, User,TestResult,TopicResult
 from . import mongo2
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import current_app
+import openai
+import gradio
+import re
 
 auth = Blueprint('auth', __name__)
 
@@ -384,3 +387,48 @@ def signup():
 
     return render_template("signup.html")
 
+openai.api_key = "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"
+
+# messages = [{"role": "system", "content": "You are a math expert"}]
+
+
+@auth.route('/ask',methods=["GET", "POST"])
+def ask():
+    return render_template("takeq.html")
+
+
+messages = [{"role": "system", "content": "You are a computer science expert"}]
+def CustomChatGPT(user_input):
+    messages.append({"role": "user", "content": user_input})
+    response = openai.ChatCompletion.create(
+        model = "gpt-3.5-turbo",
+        messages = messages
+    )
+    ChatGPT_reply = response["choices"][0]["message"]["content"]
+    messages.append({"role": "assistant", "content": ChatGPT_reply})
+    return ChatGPT_reply
+
+@auth.route('/ans', methods=['GET', 'POST'])
+def ans():
+    if request.method == 'POST':
+        user_input = request.form['query']
+        response=CustomChatGPT(user_input)
+        # # Call ChatGPT API
+        # response = openai.Completion.create(
+        #     engine='davinci',
+        #     prompt=user_input,
+        #     max_tokens=100
+        # )
+
+        # # Extract the generated response from the API
+        # chatgpt_response = response.choices[0].text.strip()
+
+        # # Split the response by sentences and select the first sentence
+        # sentences = re.split(r'(?<=[.!?])\s+', chatgpt_response)
+        # if len(sentences) > 0:
+        #     chatgpt_response = sentences[0]
+
+        return render_template('answer.html', response=response)
+    else:
+        return render_template('takeq.html')
+    

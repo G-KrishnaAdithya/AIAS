@@ -77,18 +77,30 @@ header {
     text-decoration: none;
     transition: background-color 0.3s ease;
     font-size: small;
+
+
+
+
+     #002D62;
+
+     
   } */
 
 
   header {
+    top: 0px;
     background-color: #002D62;
     color: #fffffff2;
-    height: 20%;
+    height: 30%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
   }
   
   nav {
     display: flex;
+    top:0;
     align-items: center;
   }
   

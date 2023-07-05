@@ -1,0 +1,16 @@
+Packages:
+pip install flask
+pip install flask_pymongo
+pip install mongoengine
+pip install flask_login
+pip install sentence_transformers
+pip install jwt
+pip install openai
+pip install re
+pip install pyjwt
+pip install gunicorn
+
+Versions: 
+Python 3.10.9
+Flask 2.2.2
+Werkzeug 2.2.2

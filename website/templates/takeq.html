@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='qna.css') }}">
+{% endblock %}
+{% block title %}Ask page{% endblock %}
+{% block context %}
+<h1>Ask a queryy</h1>
+<br/><br/>
+<form action="/ans" method="POST">
+    <textarea name="query"></textarea>
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

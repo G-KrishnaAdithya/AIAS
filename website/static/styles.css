@@ -1,0 +1,29 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#chat-form {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#chat-form input[type="text"] {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+#chat-form button {
+    padding: 5px 10px;
+}
+
+#response-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+}
