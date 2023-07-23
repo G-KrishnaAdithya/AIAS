@@ -86,7 +86,7 @@ header {
      
   } */
 
-
+/* 
   header {
     top: 0px;
     background-color: #002D62;
@@ -172,4 +172,67 @@ header {
     transition: background-color 0.3s ease;
     font-size: small;
   }
-  
+   */
+
+   /* header.css */
+
+/* Reset default margin and padding */
+body, header, nav, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the background color and text color for the header */
+header {
+  background-color: #002D62;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Center the logo */
+h2 {
+  text-align: center;
+}
+
+/* Style the navigation links */
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-button1,
+.nav-button2,
+.nav-button3,
+.nav-button4 {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.nav-button1:hover,
+.nav-button2:hover,
+.nav-button3:hover,
+.nav-button4:hover {
+  background-color: #555;
+}
+
+/* Style the alert message */
+.alert {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.alert p {
+  margin: 0;
+}
+
+/* Hide the alert after 3 seconds */
+.alert.hide {
+  display: none;
+}
