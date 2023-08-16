@@ -389,7 +389,7 @@ def signup():
 def ask():
     return render_template("takeq.html")
 
-openai.api_key ="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"
+openai.api_key ="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"
 messages = [{"role": "system", "content": "You are a computer science expert"}]
 def CustomChatGPT(user_input):
     messages.append({"role": "user", "content": user_input})
